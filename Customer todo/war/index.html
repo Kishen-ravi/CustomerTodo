@@ -5,10 +5,11 @@
 	<link rel="stylesheet" type="text/css" href="todo.css">
 </head>
 <body>
+<h2 style="text-align: center">Customer Todo List</h2>
 	<div id="myDIV" class="form">
 	
 	  	<div class="blocks">
-	  		<h2 style="margin:5px">Customer List</h2>
+	  		
 	  		<input type="button" class="details1 new-gray-btn1" value="Add Customer" onclick="displayblock();">  
 	  		<div id="customerPopup" style="display: none;">
 	  		<div class="arrow"> <i class="up"></i></div>
@@ -30,7 +31,7 @@
 	    </div>
 	    <div class=" blocks"> 
 	    <div id="custDetails" class="Custdetails1"  style="display: none;">
-	    	<h2 style="margin:5px">Details</h2>
+	    	
 		    	<label class="label">First Name</label>
 		    	<input type="text" class="custdetails" id="custFName" placeholder="First Name" onkeydown = "if (event.keyCode == 13){updateCust();}">
 		    	<br>
@@ -47,7 +48,6 @@
 	    <div class=" blocks">
 	    <div id="custTodo" class="Custdetails1" style="display: none;">
 	    	<div style="width: 97%;">
-	    		<h2 style="margin:5px">My To Do List</h2>
    		 		<input type="text" class="details"id="task" placeholder="Add Item..." name="task" onkeydown = "if (event.keyCode == 13){add();}"   >
 	    		<br><br>
 	    		<ul id="todo"></ul>

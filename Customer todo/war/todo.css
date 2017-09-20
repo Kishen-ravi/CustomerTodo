@@ -278,9 +278,10 @@ border: solid white;
 	}
 
 div#addnewCustomerPopup {
-    top: 94px !important;
+    top: 13.4% !important;
     left: 83px !important;
     position: absolute;
+    border: none;
 }
 
 

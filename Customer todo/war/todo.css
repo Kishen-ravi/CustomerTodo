@@ -48,13 +48,17 @@
 	width: 67%;
 	border-radius: 7px;
 	padding: 8px 10px 8px 10px;
-	background-color: #9490f0 !important;
+	background-color: #52a4f7 !important;
+	border-color: #52a4f7 !important;
+	cursor: pointer;
 }
 .label{
 	float: left;
 	margin: 9px;
 }
-
+label{
+	cursor: pointer;
+}
 .adding{
   width: 40%;
   padding: 10px 5px 10px 5px;
@@ -62,7 +66,8 @@
 }
 
 body{
-  background: linear-gradient(to right, #2013e0 , #1dcfec);
+  /* background: linear-gradient(to right, #2013e0 , #1dcfec); */
+  background-color: #b0e2f1;
 }
 
 h1{
@@ -83,10 +88,9 @@ ul {
 /* Style the list items */
 ul li {
   width: 95%;
-  cursor: pointer;
   position: relative;
   padding: 12px 8px 12px 20px;
-  background: rgba(51, 153, 255, 0.72);
+  background: #b0e2f1;
   font-size: 17px;
   transition: 0.2s;
 
@@ -99,7 +103,7 @@ ul li {
 
 /* Darker background-color on hover */
 ul li:hover {
-  background: #0080ff;
+  background: #82e2ff;
 }
 
 /* When clicked on, add a background color and strike out text */
@@ -305,9 +309,9 @@ div#addnewCustomerPopup {
 }
 
 .new-green-btn {
-    background: #9490f0 !important;
+    background: #52a4f7 !important;
     color: #FFF !important;
-    border-color: #9490f0 !important;
+    border-color: #52a4f7 !important;
 }
 
 .new-gray-btn {

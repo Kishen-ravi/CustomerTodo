@@ -193,11 +193,11 @@ function updateCust()
 		document.getElementById('custFName').style.backgroundColor = "";
 		document.getElementById('custEmail').style.backgroundColor = "";
 		document.getElementById('custPhone').style.backgroundColor = "";
-		document.getElementById(custId).innerHTML = fname1;
+		document.getElementById(cusid[1]).innerHTML = fname1;
 		alert("Details Updated!!!");
-		if(cusid[1] == custId)
+		if(cusid[1] == cusid[1])
 		{
-			pushcust(custId,fname1,lname1,email1,mobile1);
+			pushcust(cusid[1],fname1,lname1,email1,mobile1);
 		}
     }
 	

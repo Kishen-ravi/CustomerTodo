@@ -51,7 +51,7 @@ function addcust()
 		pushcust(custId,fname,lname,email,mobile);
 	    fname1.value = "";
 	    createCustList(custId, fname);
-		    
+	    custAdded(custId,fname,lname,email,mobile);
 	
     }
 	document.getElementById('customerPopup').style.display='none';
@@ -60,6 +60,13 @@ function addcust()
 	document.getElementById('customerNewLastName').value="";
 	document.getElementById('customerNewEmail').value="";
 	document.getElementById('customerNewMobile').value="";
+	
+
+    var listItem = document.getElementsByClassName("custList");
+	for (var i = 0; i < listItem.length; i++) {
+		listItem[i].classList.remove("active");
+	}
+	document.getElementById("s"+custId).classList.add("active");
     return false;
 }
 function pushcust(id,fname,lname,email,mobile)
@@ -73,10 +80,10 @@ function pushcust(id,fname,lname,email,mobile)
   	customer.push(person1);
   	localStorage.setItem(id, JSON.stringify(person1));
   	console.log(JSON.stringify(customer));
-
 }
 
-function createCustList(id,fname,lname,email,mobile)
+
+function createCustList(id,fname)
 {
 	sid = "s" + id;
 	tid = "t" + id;
@@ -84,6 +91,7 @@ function createCustList(id,fname,lname,email,mobile)
 	var node = document.createElement("LI");
 	node.class = "";
 	node.id = sid;
+	node.className = "custList";
 	var para = document.createElement("label");
 	para.id = id;
 	var textnode = document.createTextNode(fname);
@@ -97,8 +105,37 @@ function createCustList(id,fname,lname,email,mobile)
 	para.addEventListener('click',showDetail);
 	close.addEventListener('click',removeCust);
 	document.getElementById("custList").appendChild(node);
+	
 }
-
+function custAdded(id,fname,lname,email,mobile){
+	if(lname == undefined){
+		lname = null;
+	}
+	if(email == undefined){
+		email = null;
+	}
+	if(mobile == undefined){
+		mobile = null;
+	}
+	
+	var name = document.getElementById("custFName");
+	name.value = fname;
+	name.className = "custdetails "+ id;
+	var lastname = document.getElementById("custLName");	
+	lastname.value = lname;
+	lastname.className = "custdetails "+ id;
+	var cmail = document.getElementById("custEmail");
+	cmail.value = email;
+	cmail.className = "custdetails "+ id;
+	var cmobile = document.getElementById("custPhone");
+	cmobile.value = mobile;
+	cmobile.className = "custdetails "+ id;
+	var cupdate = document.getElementById("updateCust");
+	cupdate.className = "details1 new-gray-btn1 "+ id;
+	var x=document.getElementsByClassName("Custdetails1");
+	x[0].style.display = 'block';
+	x[1].style.display = 'block';
+}
 function showDetail(){
 	var id1 = this.getAttribute('id');
 	console.log(id1);
@@ -148,7 +185,13 @@ function showDetail(){
 	var x=document.getElementsByClassName("Custdetails1");
 	x[0].style.display = 'block';
 	x[1].style.display = 'block';
-	
+	var listItem = document.getElementsByClassName("custList");
+	console.log(listItem);
+	for (var i = 0; i < listItem.length; i++) {
+		listItem[i].classList.remove("active");
+	}
+	this.parentNode.classList.add("active");
+    return false;
 }
 
 function updateCust()

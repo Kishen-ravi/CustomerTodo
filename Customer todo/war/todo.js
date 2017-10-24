@@ -133,6 +133,7 @@ function custAdded(id,fname,lname,email,mobile){
 	var cupdate = document.getElementById("updateCust");
 	cupdate.className = "details1 new-gray-btn1 "+ id;
 	var x=document.getElementsByClassName("Custdetails1");
+	document.getElementById("todo").innerHTML = "";
 	x[0].style.display = 'block';
 	x[1].style.display = 'block';
 }
@@ -477,6 +478,7 @@ function displayblock()
 {
 	document.getElementById('customerPopup').style.display='block';
 	document.getElementById('pageBlockNewCustomer').style.display='block';
+	document.getElementById('customerNewName').focus();
 }
 function closepop()
 {

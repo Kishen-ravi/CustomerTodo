@@ -265,8 +265,13 @@ div#form_sample {
 	padding: 10px;
 	text-align: center;
 	float: left;
+	
 }
-
+.listBlocks{
+	overflow-y: scroll;
+	position: relative;
+	height:95%;
+}
 i {
 	border: solid white;
 	border-width: 0px 10px 10px 0px;
